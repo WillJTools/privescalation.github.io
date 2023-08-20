@@ -30,17 +30,38 @@ gcc -shared -o malicious.dll malicious.c
     </div>
     
     <div class="lesson">
-      <h2>Linux Privilege Escalation</h2>
-      <h3>Linux Commands</h3>
+            <h2>Linux Privilege Escalation</h2>
+      <h3>Basic Enumeration</h3>
       <pre><code>
 id
 uname -a
-ps aux
-netstat -tuln
 df -h
       </code></pre>
       
-      <!-- Include more content here -->
+      <h3>Enumerating Processes</h3>
+      <pre><code>
+ps aux
+ps -ef
+      </code></pre>
+      
+      <h3>Checking Sudo Permissions</h3>
+      <pre><code>
+sudo -l
+      </code></pre>
+      
+      <h3>Checking SUID and SGID Binaries</h3>
+      <pre><code>
+find / -perm -u=s -type f 2>/dev/null
+find / -perm -g=s -type f 2>/dev/null
+      </code></pre>
+      
+      <h3>Misconfigured Cron Jobs</h3>
+      <pre><code>
+crontab -l
+cat /etc/crontab
+      </code></pre>
+      
+      <!-- Add more Linux privilege escalation content here -->
     </div>
     
     <!-- Add more lessons or sections here -->
