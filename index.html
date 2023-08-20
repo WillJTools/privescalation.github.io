@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+  <title>Privilege Escalation Lessons</title>
+</head>
+<body>
+  <div class="lesson-container">
+    <h1>Privilege Escalation Lessons</h1>
+    
+    <div class="lesson">
+      <h2>Windows Privilege Escalation</h2>
+      <h3>PowerShell Commands</h3>
+      <pre><code>
+Get-Process -IncludeUserName
+Get-WmiObject Win32_ComputerSystem
+(Get-WmiObject -Class Win32_UserAccount -Filter "LocalAccount=True").Name
+      </code></pre>
+      
+      <h3>DLL Hijacking</h3>
+      <pre><code>
+# DLL Hijacking example (for educational purposes only)
+# Compile a malicious DLL (malicious.c)
+gcc -shared -o malicious.dll malicious.c
+      </code></pre>
+      
+      <!-- Include more content here -->
+    </div>
+    
+    <div class="lesson">
+      <h2>Linux Privilege Escalation</h2>
+      <h3>Linux Commands</h3>
+      <pre><code>
+id
+uname -a
+ps aux
+netstat -tuln
+df -h
+      </code></pre>
+      
+      <!-- Include more content here -->
+    </div>
+    
+    <!-- Add more lessons or sections here -->
+    
+  </div>
+</body>
+</html>
